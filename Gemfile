@@ -32,6 +32,7 @@ gem 'jquery-rails', "~> 2.1.2"
 group :development, :test do
   gem 'rspec-rails' #, '2.6.1'
   gem 'timecop'
+  gem 'sqlite3'
 
   gem 'rb-fsevent'
   gem 'ruby_gntp'

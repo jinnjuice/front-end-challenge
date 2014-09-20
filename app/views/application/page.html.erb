@@ -6,10 +6,55 @@
 
 		<div class="panel panel-default small-margin">
 			<div class="panel-heading">
-				<h2>Front-end Programming Challenge
-					
+				<h2>
+					Yiftee App
 				</h2>
 			</div>
+
+			<!-- Main Form -->
+			<form name="sendMessage" ng-submit="submitForm(sendMessage.$valid)" novalidate>
+
+				<!-- Name Input -->
+				<div>
+					<label>Name:</label>
+					<input type="text" name="name" placeholder="name" ng-model="contact.name" required>
+					<span ng-show="sendMessage.name.$invalid && !sendMessage.name.$pristine">Please enter a name</span>
+				</div>
+
+				<!-- Phone Number Input -->
+				<div>
+					<label>SMS:</label>
+					<input type="tel" name="phone" placeholder="Mobile Number" required>
+					<span ng-show="sendMessage.phone.$invalid">Please Enter
+					a valid phone number</span>
+				</div>
+
+				<!-- Email Address -->
+				<div>
+					<label>Email:</label>
+					<input type="email" name="email" placeholder="i.e. abc@abc.com" ng-model="email" required>
+					<span ng-show="sendMessage.email.$invalid && !sendMessage.email.$pristine">Please enter a
+					valid email</span>
+				</div>
+
+				<!-- Message -->
+				<div>
+					<label>Message:</label>
+					<textarea name="message" ng-maxlength="140" required></textarea>
+				</div>
+
+				<!-- Send button -->
+				<div>
+					<button type="submit" ng-disabled="sendMessage.$invalid" ng-click="addContact(name)">Send</button>
+				</div>
+
+				<div>
+					<li ng-repeat="contact in contacts">{{contacts.name}}</li>
+				</div>
+
+
+			</form>
+
 
 		<div class="panel-body">
 		</div>
